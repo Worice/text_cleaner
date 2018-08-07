@@ -1,0 +1,12 @@
+v1.0
+Basic data cleaning. Details coming soon.
+
+How it does try to work:
+1) Move data you want to clean in text_cleaner folder.
+2) Open terminal
+3) ./text_cleaner yourinput.file
+4) Output is produced in the same folder
+
+v1.1
+Added option to remove lines composed by one single alphabetic word
+
