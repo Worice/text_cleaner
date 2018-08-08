@@ -7,7 +7,8 @@ text_cleaner(){
 	./uppercase_remove.awk		|
 	./whitespace_remove.awk		|
 	./numeric_line_remove.awk	|
-	./singleton_remove.awk
+	./singleton_remove.awk		|
+	./blank_line_remove.awk
 }
 
 text_cleaner $1 > "output"
