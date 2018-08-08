@@ -8,7 +8,24 @@ text_cleaner(){
 	./whitespace_remove.awk		|
 	./numeric_line_remove.awk	|
 	./singleton_remove.awk		|
-	./blank_line_remove.awk
+	./blank_line_remove.awk		
+
 }
 
-text_cleaner $1 > "output"
+text_cleaner $1 > "temp"
+
+slicing(){
+	./sentence_cutter.x temp 
+}
+
+slicing temp > "output"
+
+rm temp
+
+exploration(){
+	
+	./descriptive_stats.x output
+} 
+
+exploration output  > "stats"
+
