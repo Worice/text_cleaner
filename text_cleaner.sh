@@ -12,15 +12,26 @@ text_cleaner(){
 
 }
 
-text_cleaner $1 > "temp"
+text_cleaner $1 > "temp1"
 
 slicing(){
-	./sentence_cutter.x temp 
+	./sentence_cutter.x temp1 
 }
 
-slicing temp > "output"
+slicing temp1 > "temp2"
 
-rm temp
+rm temp1
+
+
+text_refine(){
+	./headline_number_remove.awk temp2	|
+	./whitespace_remove.awk			|
+	./singleton_remove.awk			|
+	./blank_line_remove.awk		
+}
+
+text_refine temp2 > "output"
+rm temp2
 
 exploration(){
 	
@@ -28,4 +39,5 @@ exploration(){
 } 
 
 exploration output  > "stats"
+
 
