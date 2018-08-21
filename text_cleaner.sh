@@ -1,5 +1,8 @@
 #!/bin/bash
 
+	gcc sentence_cutter.c -o sentence_cutter.x
+	gcc descriptive_stats.c -o descriptive_stats.x
+
 text_cleaner(){
 	./date_remove.awk $1 		|
 	./long_number_remove.awk 	|
